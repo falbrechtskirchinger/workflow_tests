@@ -7,7 +7,7 @@ on:
 
 jobs:
   ci_target:
-    runs-on: ubuntu-latest
     steps:
-      - name: "Test"
-        run: echo "Hello, World!"
+      - uses: ./.github/workflows/build-and-test-ci-target
+        with:
+          target: ci_target

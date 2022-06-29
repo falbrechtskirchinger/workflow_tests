@@ -1,5 +1,3 @@
-name: "Build and test CI target"
-
 on:
   workflow_call:
     inputs:

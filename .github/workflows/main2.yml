@@ -1,0 +1,15 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  ci_target:
+    steps:
+      - uses: ./.github/workflows/build-and-test-ci-target
+        with:
+          target: ci_target

@@ -7,6 +7,9 @@ on:
 
 jobs:
   ci_target:
+    strategy:
+      matrix:
+        compiler: [ gcc, clang ]
     uses: ./.github/workflows/build-and-test-ci-target.yml
     with:
-      target: ci_target
+      target: ci_target_${{ matrix.compiler }}

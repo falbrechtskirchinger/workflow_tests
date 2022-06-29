@@ -12,4 +12,4 @@ jobs:
       - name: "Configure CMake"
         run: echo "cmake -S . -B build -DJSON_CI=On"
       - name: "Build and test"
-        run: echo "cmake --build build --target ${{ matrix.target }}"
+        run: echo "cmake --build build --target ${{ inputs.target }}"

@@ -8,5 +8,5 @@ on:
 jobs:
   ci_target:
     uses: ./.github/workflows/build-and-test-ci-target.yml
-      with:
-        target: ci_target
+    with:
+      target: ci_target

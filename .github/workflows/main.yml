@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  ci_cxx_standards:
+    strategy:
+      matrix:
+        compiler: [ gcc, clang ]
+        standard: [11, 14, 17, 20]
+    steps:
+      - uses: ./.github/workflows/build-and-test-ci-target
+        with:
+          target: ci_test_${{ matrix.compiler }}_cxx${{ matrix.standard }}

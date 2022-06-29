@@ -1,0 +1,16 @@
+name: "Build and test CI target"
+
+on:
+  workflow_call:
+    inputs:
+      target:
+        type: string
+        required: true
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+        - name: "Configure CMake"
+          run: echo "cmake -S . -B build -DJSON_CI=On"
+        - name: "Build and test"
+          run: echo "cmake --build build --target ${{ matrix.target }}"
